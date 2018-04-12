@@ -70,5 +70,14 @@
             android:text="Liverpool" />
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/test2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSecond"
+        android:layout_alignStart="@+id/radioGroup"
+        android:layout_marginBottom="58dp"
+        android:text="TextView" />
+
 
 </RelativeLayout>

@@ -8,18 +8,23 @@ import android.widget.Button;
 
 public class TenthQuestion extends AppCompatActivity {
 
+    int countReceived;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tenth_question);
+        Intent actualScreen = getIntent();
+        Bundle value = actualScreen.getExtras();
+        countReceived = value.getInt("contator10");
 
-        Button btnProxima = (Button)findViewById(R.id.btnTenth);
-
-        btnProxima.setOnClickListener(new View.OnClickListener() {
+        Button btnNext = (Button)findViewById(R.id.btnTenth);
+        btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentProxima = new Intent(TenthQuestion.this, ResultActivity.class);
-                startActivity(intentProxima);
+                Intent nextQuestion = new Intent(TenthQuestion.this, ResultActivity.class);
+                nextQuestion.putExtra("result", countReceived);
+                startActivity(nextQuestion);
             }
         });
 
