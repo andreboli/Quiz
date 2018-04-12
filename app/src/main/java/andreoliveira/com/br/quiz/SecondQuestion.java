@@ -9,32 +9,24 @@ import android.widget.TextView;
 
 public class SecondQuestion extends AppCompatActivity {
 
-    int count;
-    TextView teste;
+    int countReceived;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_question);
 
-        int countRecebido;
-        Intent telaAtual = getIntent();
-        Bundle valor = telaAtual.getExtras();
+        Intent actualScreen = getIntent();
+        Bundle value = actualScreen.getExtras();
+        countReceived = value.getInt("contador2");
 
-        teste = (TextView)findViewById(R.id.test);
-        teste.setText(String.valueOf(count));
-        count = valor.getInt("contador2");
-
-        teste = (TextView)findViewById(R.id.test);
-        teste.setText(String.valueOf(count));
-
-        Button btnProxima = findViewById(R.id.btnSecond);
-
-        btnProxima.setOnClickListener(new View.OnClickListener() {
+        Button btnNext = findViewById(R.id.btnSecond);
+        btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proximaPergunta = new Intent(SecondQuestion.this, ThirdQuestion.class);
-                startActivity(proximaPergunta);
+                Intent nextQuestion = new Intent(SecondQuestion.this, ThirdQuestion.class);
+                nextQuestion.putExtra("contador3", countReceived);
+                startActivity(nextQuestion);
             }
         });
     }

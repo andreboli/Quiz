@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/resultView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="andreoliveira.com.br.quiz.ResultActivity">
@@ -10,12 +11,22 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="123dp"
         android:fontFamily="casual"
-        android:text="Resultado:"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:text="RESULTADO"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
         android:textSize="30sp"
-        android:textStyle="bold|italic"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="108dp" />
-</android.support.constraint.ConstraintLayout>
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:textSize="30sp" />
+</RelativeLayout>
