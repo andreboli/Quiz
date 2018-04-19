@@ -13,6 +13,7 @@ public class FirstQuestion extends AppCompatActivity {
     int countReceived;
     RadioGroup radioGroup;
     RadioButton radioButton;
+    RadioButton correta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,20 +25,15 @@ public class FirstQuestion extends AppCompatActivity {
         Bundle value = actualScreen.getExtras();
         countReceived = value.getInt("contador");
 
-        int radioID = radioGroup.getCheckedRadioButtonId();
-
-        radioButton = findViewById(radioID);
-
-
-
-        if(radioButton.isChecked()){
-            countReceived += 1;
-        }
+        correta = findViewById(R.id.rbCorreta);
 
         Button btnNext = (Button)findViewById(R.id.btnFirst);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(correta.isChecked()){
+                    countReceived += 1;
+                }
                 Intent nextQuestion = new Intent(FirstQuestion.this, SecondQuestion.class);
                 nextQuestion.putExtra("contador2", countReceived);
                 startActivity(nextQuestion);

@@ -13,29 +13,26 @@ public class SixthQuestion extends AppCompatActivity {
     int countReceived;
     RadioGroup radioGroup;
     RadioButton radioButton;
+    RadioButton correta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sixth_question);
+        radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
         Intent actualScreen = getIntent();
         Bundle value = actualScreen.getExtras();
         countReceived = value.getInt("contador6");
 
-        int radioID = radioGroup.getCheckedRadioButtonId();
-
-        radioButton = findViewById(radioID);
-
-        checkButton(findViewById(R.id.rbCorreta));
-
-        if(radioButton == findViewById(R.id.rbCorreta)){
-            countReceived += 1;
-        }
+        correta = findViewById(R.id.rbCorreta);
 
         Button btnNext = (Button)findViewById(R.id.btnSixth);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(correta.isChecked()){
+                    countReceived += 1;
+                }
                 Intent nextQuestion = new Intent(SixthQuestion.this, SeventhQuestion.class);
                 nextQuestion.putExtra("contador7", countReceived);
                 startActivity(nextQuestion);

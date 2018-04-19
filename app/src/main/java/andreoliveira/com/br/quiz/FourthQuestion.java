@@ -13,31 +13,27 @@ public class FourthQuestion extends AppCompatActivity {
     int countReceived;
     RadioGroup radioGroup;
     RadioButton radioButton;
+    RadioButton correta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fourth_question);
+        radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
         Intent actualScreen = getIntent();
         Bundle value = actualScreen.getExtras();
         countReceived = value.getInt("contador4");
 
+        correta = findViewById(R.id.rbCorreta);
 
-
-        int radioID = radioGroup.getCheckedRadioButtonId();
-
-        radioButton = findViewById(radioID);
-
-        checkButton(findViewById(R.id.rbCorreta));
-
-        if(radioButton == findViewById(R.id.rbCorreta)){
-            countReceived += 1;
-        }
 
         Button btnNext = (Button)findViewById(R.id.btnFourth);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(correta.isChecked()){
+                    countReceived += 1;
+                }
                 Intent nextQuestion = new Intent(FourthQuestion.this, FifthQuestion.class);
                 nextQuestion.putExtra("contador5", countReceived);
                 startActivity(nextQuestion);
