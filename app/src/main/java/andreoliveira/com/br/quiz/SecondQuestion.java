@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -15,6 +16,8 @@ public class SecondQuestion extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton radioButton;
     RadioButton correta;
+    EditText edtNome;
+    String nomeRecebido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,7 @@ public class SecondQuestion extends AppCompatActivity {
         Intent actualScreen = getIntent();
         Bundle value = actualScreen.getExtras();
         countReceived = value.getInt("contador2");
+        nomeRecebido = value.getString("nome");
 
         correta = findViewById(R.id.rbCorreta);
 
@@ -37,6 +41,7 @@ public class SecondQuestion extends AppCompatActivity {
                 }
                 Intent nextQuestion = new Intent(SecondQuestion.this, ThirdQuestion.class);
                 nextQuestion.putExtra("contador3", countReceived);
+                nextQuestion.putExtra("nome", nomeRecebido.toString());
                 startActivity(nextQuestion);
             }
         });

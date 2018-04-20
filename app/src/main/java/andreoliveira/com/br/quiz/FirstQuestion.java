@@ -14,6 +14,7 @@ public class FirstQuestion extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton radioButton;
     RadioButton correta;
+    String nomeRecebido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class FirstQuestion extends AppCompatActivity {
         Intent actualScreen = getIntent();
         Bundle value = actualScreen.getExtras();
         countReceived = value.getInt("contador");
+        nomeRecebido = value.getString("nome");
 
         correta = findViewById(R.id.rbCorreta);
 
@@ -36,6 +38,7 @@ public class FirstQuestion extends AppCompatActivity {
                 }
                 Intent nextQuestion = new Intent(FirstQuestion.this, SecondQuestion.class);
                 nextQuestion.putExtra("contador2", countReceived);
+                nextQuestion.putExtra("nome", nomeRecebido.toString());
                 startActivity(nextQuestion);
             }
         });

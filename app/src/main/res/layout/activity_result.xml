@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="123dp"
         android:fontFamily="casual"
-        android:text="RESULTADO"
+        android:text="Sua pontuação foi: "
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
         android:textSize="30sp"
@@ -38,5 +38,17 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:text="Começar de novo" />
+
+    <TextView
+        android:id="@+id/edtNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/result"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="74dp"
+        android:fontFamily="casual"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
