@@ -43,6 +43,7 @@
         android:layout_marginBottom="110dp">
 
         <RadioButton
+<<<<<<< HEAD
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,6 +69,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+=======
+            android:id="@+id/rb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="checkButton"
+            android:checked="true"
+            android:text="Barcelona, com três títulos consecutivos" />
+
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="checkButton"
+            android:text="Manchester United, com três títulos consecutivos" />
+
+        <RadioButton
+            android:id="@+id/rb3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="checkButton"
+            android:text="Milan, com cinco títulos consecutivos" />
+
+        <RadioButton
+            android:id="@+id/rbCorreta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="checkButton"
+>>>>>>> develop-casa
             android:text="Real Madrid, com quatro títulos consecutivos" />
     </RadioGroup>
 

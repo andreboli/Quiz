@@ -43,6 +43,7 @@
         android:layout_marginBottom="110dp">
 
         <RadioButton
+<<<<<<< HEAD
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,6 +69,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+=======
+            android:id="@+id/rb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:onClick="checkButton"
+            android:text="Real Madrid" />
+
+        <RadioButton
+            android:id="@+id/rbCorreta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+        android:onClick="checkButton"
+            android:text="Barcelona" />
+
+        <RadioButton
+            android:id="@+id/rb3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="checkButton"
+            android:text="Lyon" />
+
+        <RadioButton
+            android:id="@+id/rb4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="checkButton"
+>>>>>>> develop-casa
             android:text="Sevilla" />
     </RadioGroup>
 
